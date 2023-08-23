@@ -9,12 +9,11 @@ import org.springframework.ui.Model;
 public class DemoController {
 	@RequestMapping("/{num}")
 	public String index(@PathVariable int num, Model model) {
-		//int sum = 0;
-		//for(int i = 1 ; i <= 10 ; i++) {
-		//	sum += i;
-		//}
-		//model.addAttribute("msg", "sum = " + sum);
-		model.addAttribute("msg", "sum = sum");
+		int sum = 0;
+		for(int i = 1 ; i <= num ; i++) {
+			sum += i;
+		}
+		model.addAttribute("msg", "sum = " + sum);
 		return "index";
 	}
 }
